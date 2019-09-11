@@ -22,7 +22,7 @@ namespace _13.inheritance
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            _cOC = new COneCycle("외발자전거");
+            _cOC = new COneCycle("외발자전거"); //
         }
 
         private void btnOneCycle_Click(object sender, EventArgs e)
