@@ -17,23 +17,30 @@ namespace _13.inheritance
         public Form1()
         {
             InitializeComponent();
-            this.Load += Form1_Load1;
+            //this.Load += Form1_Load1;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            _cOC = new COneCycle("외발자전거");
         }
 
         private void btnOneCycle_Click(object sender, EventArgs e)
         {
 
-            COneCycle cOC = new COneCycle("외발 자전거");
-            
+            OnecycleDraw();
 
-            lbName.Text = cOC.strName;
+        }
+
+        private void OnecycleDraw()
+        {
+
+            lbName.Text = _cOC.strName;
             Graphics g = pMain.CreateGraphics(); //pMain 이라는 판넬에 그림을 그리겟다
-            Pen p = cOC.fPeninfo(); 
+            Pen p = _cOC.fPeninfo();
 
-            g.DrawRectangle(p, cOC._rtSquare1);
-            g.DrawEllipse(p, cOC._rtCircle1);
-
-
+            g.DrawRectangle(p, _cOC._rtSquare1);
+            g.DrawEllipse(p, _cOC._rtCircle1);
         }
     }
 }
